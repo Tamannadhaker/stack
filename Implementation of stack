@@ -12,26 +12,26 @@ Node* top = NULL;
 void push(int value) {
 struct Node *newNode;
 newNode = (struct Node *)malloc(sizeof(struct Node));
-newNode->;data = value; // assign value to the node
+newNode->data = value; // assign value to the node
 if (top == NULL) {
-newNode->;next = NULL;
+newNode->next = NULL;
 } else {
-newNode->;next = top; // Make the node as top
+newNode->next = top; // Make the node as top
 }
-top = newNode; // top always points to the newly created node    v
-printf(&quot;Node is Inserted\n\n&quot;);
+top = newNode; // top always points to the newly created node    
+printf("Node is Inserted\n\n");
 }
-
+//Pop()
 int pop() {
 if (top == NULL)
 {
-printf(&quot;\nStack Underflow\n&quot;);
+printf("\nStack Underflow\n";);
 }
 else
 {
 struct Node *temp = top;
-int temp_data = top->;data;
-top = top->;next;
+int temp_data = top->data;
+top = top->next;
 free(temp);
 return temp_data;
 }
@@ -40,34 +40,35 @@ void display() {
 // Display the elements of the stack
 if (top == NULL)
 {
-printf(&quot;\nStack Underflow\n&quot;);
+printf("\nStack Underflow\n");
 }
 else
 {
-printf(&quot;The stack is \n&quot;);
+printf("The stack is \n");
 struct Node *temp = top;
-while (temp->;next != NULL) {
-printf(&quot;%d--->;&quot;, temp->;data);
-temp = temp->;next;
+while (temp->next != NULL) {
+printf("%d--->", temp->data);
+temp = temp->next;
 }
-printf(&quot;%d--->;NULL\n\n&quot;, temp->;data);
+printf("%d--->NULL\n\n", temp->;data);
 }
 }
 int main() {
 int choice, value;
-printf(&quot;\nImplementaion of Stack using Linked List\n&quot;);
+printf("\nImplementaion of Stack using Linked List\n");
 while (1) {
-printf(&quot;1. Push\n2. Pop\n3. Display\n4. Exit\n&quot;);
-printf(&quot;\nEnter your choice : &quot;);
-scanf(&quot;%d&quot;, &amp;choice);
-switch (choice) {
+printf("1. Push\n2. Pop\n3. Display\n4. Exit\n");
+printf("\nEnter your choice : ");
+scanf("%d", &amp;choice);
+switch (choice) 
+{
 case 1:
-printf(&quot;\nEnter the value to insert: &quot;);
-scanf(&quot;%d&quot;, &amp;value);
+printf("\nEnter the value to insert:");
+scanf("%d";, &amp;value);
 push(value);
 break;
 case 2:
-printf(&quot;Popped element is :%d\n&quot;, pop());
+printf("Popped element is :%d\n", pop());
 break;
 case 3:
 display();
@@ -77,7 +78,7 @@ case 4:
 exit(0);
 break;
 default:
-printf(&quot;\nWrong Choice\n&quot;);
+printf("\nWrong Choice\n");
 }
 }
 }
@@ -89,16 +90,16 @@ void pop();
 void show();
 void main ()
 {
-printf(&quot;Enter the number of elements in the stack &quot;);
-scanf(&quot;%d&quot;,&amp;n);
-printf(&quot;*********Stack operations using array*********&quot;);
-printf(&quot;\n----------------------------------------------\n&quot;);
+printf("Enter the number of elements in the stack");
+scanf("%d",&amp;n);
+printf("*********Stack operations using array*********");
+printf("\n----------------------------------------------\n");
 while(choice != 4)
 {
-printf(&quot;Chose one from the below options...\n&quot;);
-printf(&quot;\n1.Push\n2.Pop\n3.Show\n4.Exit&quot;);
-printf(&quot;\n Enter your choice \n&quot;);
-scanf(&quot;%d&quot;,&amp;choice);
+printf("Chose one from the below options...\n");
+printf("\n1.Push\n2.Pop\n3.Show\n4.Exit");
+printf("\n Enter your choice \n");
+scanf("%d";,&amp;choice);
 switch(choice)
 {
 case 1:
@@ -119,12 +120,12 @@ break;
 }
 case 4:
 {
-printf(&quot;Exiting....&quot;);
+printf("Exiting....");
 break;
 }
 default:
 {
-printf(&quot;Please Enter valid choice &quot;);
+printf("Please Enter valid choice");
 }
 };
 }
@@ -133,11 +134,11 @@ void push ()
 {
 int val;
 if (top == n )
-printf(&quot;\n Overflow&quot;);
+printf("\n Overflow");
 else
 {
-printf(&quot;Enter the value?&quot;);
-scanf(&quot;%d&quot;,&amp;val);
+printf("Enter the value?");
+scanf("%d";,&amp;val);
 top = top +1;
 stack[top] = val;
 }
@@ -145,7 +146,7 @@ stack[top] = val;
 void pop ()
 {
 if(top == -1)
-printf(&quot;Underflow&quot;);
+printf("Underflow");
 else
 top = top -1;
 }
@@ -153,11 +154,11 @@ void show()
 {
 for (i=top;i->;=0;i--)
 {
-printf(&quot;%d\n&quot;,stack[i]);
+printf("%d\n",stack[i]);
 }
 if(top == -1)
 {
-printf(&quot;Stack is empty&quot;);
+printf("Stack is empty");
 }
 
 }
