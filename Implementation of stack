@@ -1,0 +1,163 @@
+#include <stdio.h>
+#include <stdlib.h>
+//Implementation of stack using linked list
+// Structure to create a node with data and next pointer
+struct Node {
+int data;
+struct Node *next;
+};
+Node* top = NULL;
+
+// Push() operation on a stack
+void push(int value) {
+struct Node *newNode;
+newNode = (struct Node *)malloc(sizeof(struct Node));
+newNode->;data = value; // assign value to the node
+if (top == NULL) {
+newNode->;next = NULL;
+} else {
+newNode->;next = top; // Make the node as top
+}
+top = newNode; // top always points to the newly created node    v
+printf(&quot;Node is Inserted\n\n&quot;);
+}
+
+int pop() {
+if (top == NULL)
+{
+printf(&quot;\nStack Underflow\n&quot;);
+}
+else
+{
+struct Node *temp = top;
+int temp_data = top->;data;
+top = top->;next;
+free(temp);
+return temp_data;
+}
+}
+void display() {
+// Display the elements of the stack
+if (top == NULL)
+{
+printf(&quot;\nStack Underflow\n&quot;);
+}
+else
+{
+printf(&quot;The stack is \n&quot;);
+struct Node *temp = top;
+while (temp->;next != NULL) {
+printf(&quot;%d--->;&quot;, temp->;data);
+temp = temp->;next;
+}
+printf(&quot;%d--->;NULL\n\n&quot;, temp->;data);
+}
+}
+int main() {
+int choice, value;
+printf(&quot;\nImplementaion of Stack using Linked List\n&quot;);
+while (1) {
+printf(&quot;1. Push\n2. Pop\n3. Display\n4. Exit\n&quot;);
+printf(&quot;\nEnter your choice : &quot;);
+scanf(&quot;%d&quot;, &amp;choice);
+switch (choice) {
+case 1:
+printf(&quot;\nEnter the value to insert: &quot;);
+scanf(&quot;%d&quot;, &amp;value);
+push(value);
+break;
+case 2:
+printf(&quot;Popped element is :%d\n&quot;, pop());
+break;
+case 3:
+display();
+break;
+
+case 4:
+exit(0);
+break;
+default:
+printf(&quot;\nWrong Choice\n&quot;);
+}
+}
+}
+//implementation of stack using array
+
+int stack[100],i,j,choice=0,n,top=-1;
+void push();
+void pop();
+void show();
+void main ()
+{
+printf(&quot;Enter the number of elements in the stack &quot;);
+scanf(&quot;%d&quot;,&amp;n);
+printf(&quot;*********Stack operations using array*********&quot;);
+printf(&quot;\n----------------------------------------------\n&quot;);
+while(choice != 4)
+{
+printf(&quot;Chose one from the below options...\n&quot;);
+printf(&quot;\n1.Push\n2.Pop\n3.Show\n4.Exit&quot;);
+printf(&quot;\n Enter your choice \n&quot;);
+scanf(&quot;%d&quot;,&amp;choice);
+switch(choice)
+{
+case 1:
+{
+push();
+break;
+}
+case 2:
+{
+pop();
+break;
+}
+case 3:
+{
+show();
+
+break;
+}
+case 4:
+{
+printf(&quot;Exiting....&quot;);
+break;
+}
+default:
+{
+printf(&quot;Please Enter valid choice &quot;);
+}
+};
+}
+}
+void push ()
+{
+int val;
+if (top == n )
+printf(&quot;\n Overflow&quot;);
+else
+{
+printf(&quot;Enter the value?&quot;);
+scanf(&quot;%d&quot;,&amp;val);
+top = top +1;
+stack[top] = val;
+}
+}
+void pop ()
+{
+if(top == -1)
+printf(&quot;Underflow&quot;);
+else
+top = top -1;
+}
+void show()
+{
+for (i=top;i->;=0;i--)
+{
+printf(&quot;%d\n&quot;,stack[i]);
+}
+if(top == -1)
+{
+printf(&quot;Stack is empty&quot;);
+}
+
+}
